@@ -1,0 +1,58 @@
+﻿@model Heroe
+@{
+    ViewBag.Title = "Actualizar";
+}
+
+
+<h2 class="card-title">  <a href="@Url.Action("Index", "Heroe")" class="btn btn-success" style="float:right; margin: 5.5px">Return</a> Editar Heroe </h2>
+
+
+<div class="card col-12">
+
+    <img src="@Url.Content(Model.Imagen)" class="card-img-top" alt="..." />
+</div>
+
+<br />
+
+<form action="@Url.Action("Actualizar", "Heroe")" method="post">
+    <div class="card-group">
+
+        <label class="card-text"> Id </label>
+        @Html.TextBoxFor(x => x.IdHeroe, new { @class = "form-control", @required = "required", @readonly = "readonly" })
+    </div>
+
+    <div class="card-text">
+
+        <label> Nombre Heroe </label>
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", @required = "required" })
+    </div>
+
+    <div class="card-text">
+
+        <label> Historia </label>
+        @Html.TextBoxFor(x => x.Historia, new { @class = "form-control", @required = "required" })
+    </div>
+
+    <div class="card-text">
+
+        <label> Poder </label>
+        @Html.TextBoxFor(x => x.Poder, new { @class = "form-control", @required = "required" })
+    </div>
+
+    <div class="card-text">
+
+        <label> Debilidad</label>
+        @Html.TextBoxFor(x => x.Debilidad, new { @class = "form-control", @required = "required" })
+    </div>
+
+    <div class="card-text">
+
+        <label> Universo </label>
+        @Html.TextBoxFor(x => x.Universo, new { @class = "form-control", @required = "required" })
+    </div>
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-danger" />
+    </div>
+</form>
+

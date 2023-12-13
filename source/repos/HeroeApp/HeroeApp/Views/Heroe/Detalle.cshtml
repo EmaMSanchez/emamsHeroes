@@ -1,0 +1,30 @@
+﻿@model Heroe
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h1 class ="card-title" style="float:inline-start"><a href="@Url.Action("Index", "Heroe")" class="btn btn-success" style="float:right; margin: 5.5px">Return</a>  @Model.Nombre</h1>
+<br />
+<br />
+
+<div class="card col-12">
+    <div class="col">
+        <div class="card h-100">
+            <img src="@Url.Content(Model.Imagen)" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <p class="card-text"><h6>Historia </h6>@Model.Historia</p>
+                <p class="card-text"><h6>Poder </h6>@Model.Poder</p>
+                <p class="card-text"><h6>Debilidad </h6>@Model.Debilidad</p>
+            </div>
+            <div class="card-footer">
+                <h6>ID: <small class="text-muted"> @Model.IdHeroe</small></h6>
+                <h6>Universo: <small class="text-muted"> @Model.Universo</small></h6>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a href="@Url.Action("Actualizar","Heroe", new { id = Model.IdHeroe})" class="btn btn-success d-block">Editar</a>

@@ -1,0 +1,42 @@
+﻿@model Heroe
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>  <a href="@Url.Action("Index", "Heroe")" class="btn btn-success" style="float:right; margin: 5.5px">Return</a> Nuevo Heroe</h2>
+<hr />
+
+@using (Html.BeginForm("Nuevo", "Heroe", FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <div class="form-check-label">
+        <label>Nombre</label>
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
+    </div>
+    <div class="form-check-label">
+        <label>Historia</label>
+        @Html.TextAreaFor(x => x.Historia, new { @class = "form-control" })
+    </div>
+    <div class="form-check-label">
+        <label>Poder</label>
+        @Html.TextBoxFor(x => x.Poder, new { @class = "form-control" })
+    </div>
+    <div class="form-check-label">
+        <label>Debilidad</label>
+        @Html.TextBoxFor(x => x.Debilidad, new { @class = "form-control" })
+    </div>
+    <div class="form-check-label">
+        <label>Universo</label>
+        <select class="form-control" name="Universo">
+            <option value="DC Comics">DC Comics</option>
+            <option value="Marvel">Marvel</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Imagen</label>
+        <input class="form-control" type="file" id="formFile">
+    </div>
+    <br />
+    <div class="form-check-label" >
+        <input type="submit" class="btn btn-success" value="Guardar" />
+    </div>
+}

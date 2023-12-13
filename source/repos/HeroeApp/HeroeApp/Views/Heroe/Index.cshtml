@@ -1,0 +1,37 @@
+﻿@model List<Heroe>
+@{
+    ViewBag.Title = "Index";
+}
+<div>
+    <h2>Heroe <a href="@Url.Action("Nuevo","Heroe")" class="btn btn-success"  style="float:right; margin: 5.5px">Nuevo</a></h2> 
+</div>
+
+<hr />
+
+<div class="row">
+
+    @foreach (var heroe in Model)
+    {
+        <div class="card col-md-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="@Url.Content(heroe.Imagen)" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">@heroe.Nombre</h5>
+                        <p class="card-text">@heroe.Historia</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">@heroe.Universo</small>
+                        <br />
+                        <br />
+                        
+                        <a href="@Url.Action("Detalle","Heroe", new { id = heroe.IdHeroe})" class="btn btn-primary d-block">Detalle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>
+    
